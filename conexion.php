@@ -4,5 +4,4 @@ $link =  new mysqli('localhost', 'root', '', 'embarazadas');
 //root es el usuario de la base de datos
 //'' es la clave del ususario de la base de datos
 //embarazadas es la base de datoss
-$link->close();
 ?>
