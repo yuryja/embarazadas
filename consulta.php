@@ -1,7 +1,8 @@
 <?php
     $cedula = $_GET['cedula'];//obtiene el valor de la cedula
+    $condicion = $_GET['condicion'];//obtiene el valor de la cedula
     include('conexion.php'); //conecta a la base de datos
-    if($consulta = $link->query("SELECT * FROM embarazadas WHERE cedula='$cedula'")){ //valida la cedula en la BD
+    if($consulta = $link->query("SELECT * FROM embarazadas WHERE cedula='$cedula' AND condicion='$condicion'")){ //valida la cedula en la BD
         if($consulta->num_rows == 1){ //Si encuentra registro...
             $row = $consulta->fetch_array(); //Trae el registro
             $row['modificar'] = true; //Agrega modificar con valor true

@@ -17,7 +17,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="embarazadas.php">Embarazadas</a>
                 <a class="dropdown-item" href="doctores.php">Doctores</a>
-                <a class="dropdown-item" href="consultas.php">Consultas</a>
+                <a class="dropdown-item" href="consultas.php">Consultas prenatales</a>
                 </div>
             </li>
             <li class="nav-item">
