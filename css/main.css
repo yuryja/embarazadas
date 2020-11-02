@@ -16,3 +16,6 @@ p#status {
 .mycard{
     margin-top: 20px;
 }
+.form-inline {
+    display: ruby;
+}
