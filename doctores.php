@@ -6,11 +6,5 @@
     $condicion = "2"; 
     include 'formulario.php';
     // Aqui termina el body
-?>
-<!-- Creamos un Script en JQuery para traer la consulta de cedula -->
-<script src="js/consulta.js"></script>
-<!-- Aqui termina el Script  -->
-
-<?php
     include 'footer.html'; //LLamado al footer
 ?>
