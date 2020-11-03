@@ -15,9 +15,10 @@
                 Registros
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="embarazadas.php">Embarazadas</a>
-                <a class="dropdown-item" href="doctores.php">Doctores</a>
-                <a class="dropdown-item" href="prenatales.php">Consultas prenatales</a>
+                    <a class="dropdown-item" href="embarazadas.php">Registro Embarazadas</a>
+                    <a class="dropdown-item" href="doctores.php">Registro Doctores</a>
+                    <a class="dropdown-item" href="prenatales.php">Registro Prenatal</a>
+                    <a class="dropdown-item" href="citas.php">Consulta Prenatal</a>
                 </div>
             </li>
             <li class="nav-item">
