@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-11-2020 a las 22:23:31
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.11
+-- Tiempo de generación: 03-11-2020 a las 06:20:46
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.2.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,17 +60,26 @@ CREATE TABLE `prenatal` (
   `ultima_regla` date NOT NULL,
   `tiempo_embarazo` float NOT NULL,
   `fecha_parto` date NOT NULL,
-  `control` tinyint(1) NOT NULL DEFAULT 1,
-  `centro` varchar(200) NOT NULL,
-  `condicion_centro` tinyint(1) NOT NULL DEFAULT 1,
+  `tcontrol` tinyint(1) NOT NULL DEFAULT 1,
+  `centro` varchar(200) DEFAULT NULL,
+  `condicion_centro` tinyint(1) NOT NULL DEFAULT 0,
   `enfermedad` tinyint(1) NOT NULL DEFAULT 1,
   `tipo_enfermedad` varchar(200) DEFAULT NULL,
   `micronutrientes` tinyint(1) NOT NULL DEFAULT 1,
   `asic` tinyint(1) NOT NULL DEFAULT 1,
   `parto_humanizado` tinyint(1) NOT NULL DEFAULT 1,
-  `antecedentes` text NOT NULL,
+  `antecedentes` tinyint(1) NOT NULL DEFAULT 1,
+  `tipo_antecedente` text DEFAULT NULL,
   `id_embarazada` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prenatal`
+--
+
+INSERT INTO `prenatal` (`id`, `ultima_regla`, `tiempo_embarazo`, `fecha_parto`, `tcontrol`, `centro`, `condicion_centro`, `enfermedad`, `tipo_enfermedad`, `micronutrientes`, `asic`, `parto_humanizado`, `antecedentes`, `tipo_antecedente`, `id_embarazada`) VALUES
+(1, '2020-11-03', 20, '2020-11-03', 2, '', 0, 2, '', 2, 2, 2, 2, '', 1),
+(2, '2020-10-26', 10, '2021-07-20', 1, 'Matarozzo', 1, 1, 'Gonorrea', 1, 1, 1, 1, 'Presenta gonorrea crónica', 4);
 
 -- --------------------------------------------------------
 
@@ -131,7 +140,7 @@ ALTER TABLE `embarazadas`
 -- AUTO_INCREMENT de la tabla `prenatal`
 --
 ALTER TABLE `prenatal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

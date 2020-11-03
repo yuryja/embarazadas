@@ -13,27 +13,8 @@
                     Control prenatal
                 </div>
                 <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h5 class="card-title">
-                                    Consulta de cedula
-                                </h5>
-                                <p class="card-text">
-                                    <div class="form-inline">
-                                        <input class="form-control mr-sm-2" name="cedula" id="cedula" type="search" placeholder="Ej: v12345678" aria-label="Search">
-                                        <input type="hidden" id="condicion" name="condicion" value="1">
-                                        <button class="btn btn-outline-success my-2 my-sm-0" id="consulta">Consultar</button>
-                                    </div>
-                                </p>
-                            </div>
-                            <div class="col-md-8">
-                                <h5 class="card-title">
-                                    
-                                </h5>
-                                <p id="status" class="card-text">
-                                </p>
-                            </div>
-                        </div>
+                    <input type="hidden" id="condicion" name="condicion" value="1">
+                    <?php include 'consulta_cedula.php' ?>
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
@@ -49,68 +30,153 @@
                             </div>
                         </div>
                         <form action="registro_prenatal.php" method="post">
-                        <input class="datepicker" data-date-format="mm/dd/yyyy">
-
-                        
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="ultima_regla">Última regla</label>
+                                        <input type="date" class="form-control" name="ultima_regla" required>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="tiempo_embarazo">Tiempo de embarazo</label>
+                                        <div class="form-inline">
+                                            <input type="number" step="0.1" name="tiempo_embarazo" class="form-control" placeholder="Ejemplo: 20.5"  required>
+                                            <label for="tiempo_embarazo" class="dias">Semanas</label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="fecha_parto">Fecha de parto</label>
+                                        <input type="date" name="fecha_parto" class="form-control" required>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="control">¿Está en control?</label>
+                                    <div class="form-inline">
+                                        <label for="tcontrol" class="mr-2 ml-2">SI</label>
+                                        <input type="radio" class="form-group" name="tcontrol" id="tcontrol1" value="1" required>
+                                        <label for="control" class="mr-2 ml-2">NO</label>
+                                        <input type="radio" class="form-group" name="tcontrol" id="tcontrol2" value="2">
+                                    </div>    
+                                </div>
+                                <div class="col-4">
+                                    <label for="enfermedad">¿Tiene algun tipo de enfermedad?</label>
+                                    <div class="form-inline">
+                                        <label for="enfermedad" class="mr-2 ml-2">SI</label>
+                                        <input type="radio" class="form-group" name="enfermedad" id="enfermedad1" value="1" required>
+                                        <label for="enfermedad" class="mr-2 ml-2">NO</label>
+                                        <input type="radio" class="form-group" name="enfermedad" id="enfermedad2" value="2">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <label for="micronutrientes">¿Recibe micronutrientes?</label>
+                                    <div class="form-inline">
+                                        <label for="micronutrientes" class="mr-2 ml-2">SI</label>
+                                        <input type="radio" class="form-group" name="micronutrientes" id="micronutrientes" value="1" required>
+                                        <label for="micronutrientes" class="mr-2 ml-2">NO</label>
+                                        <input type="radio" class="form-group" name="micronutrientes" id="micronutrientes" value="2">
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="row mt-3">  
+                                <div class="col-4">
+                                    <label for="asic">¿ASIC?</label>
+                                    <div class="form-inline">
+                                        <label for="asic" class="mr-2 ml-2">SI</label>
+                                        <input type="radio" class="form-group" name="asic" id="asic" value="1" required>
+                                        <label for="asic" class="mr-2 ml-2">NO</label>
+                                        <input type="radio" class="form-group" name="asic" id="asic" value="2">
+                                    </div>    
+                                </div>
+                                <div class="col-4">
+                                    <label for="parto_humanizado">¿Parto Humanizado?</label>
+                                    <div class="form-inline">
+                                        <label for="parto_humanizado" class="mr-2 ml-2">SI</label>
+                                        <input type="radio" class="form-group" name="parto_humanizado" id="parto_humanizado" value="1" required>
+                                        <label for="parto_humanizado" class="mr-2 ml-2">NO</label>
+                                        <input type="radio" class="form-group" name="parto_humanizado" id="parto_humanizado" value="2">
+                                    </div>    
+                                </div>
+                                <div class="col-4">
+                                    <label for="antecedentes">¿Posee antecedentes?</label>
+                                    <div class="form-inline">
+                                        <label for="antecedentes" class="mr-2 ml-2">SI</label>
+                                        <input type="radio" class="form-group" name="antecedentes" id="antecedentes1" value="1" required>
+                                        <label for="antecedentes" class="mr-2 ml-2">NO</label>
+                                        <input type="radio" class="form-group" name="antecedentes" id="antecedentes2" value="2">
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="row mt-3" id="centro">
+                                <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="centro">Centro</label>
+                                        <input type="text" name="centro" placeholder="Nombre del centro asistencial" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="condicion_centro">Condicion del centro</label>
+                                        <select name="condicion_centro" id="" class="form-control">
+                                            <option value="0" selected>Seleccione</option>
+                                            <option value="1">Publico</option>
+                                            <option value="2">Privado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3" id="tipo_enfermedad">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="tipo_enfermedad">Tipo de enfermedad</label>
+                                        <input type="text" name="tipo_enfermedad" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3" id="tipo_antecedente">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="tipo_antecedente">Tipo de antecedente</label>
+                                        <textarea name="tipo_antecedente" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="id_embarazada" id="ids">
+                            <button class="btn btn-block btn-success mt-3">Guardar</button>
                         </form>
-                    <!-- <form action="registro.php" method="post">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="nombres">Nombres</label>    
-                                    <input class="form-control" type="text" id="nombres" name="nombres" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="nombres">Apellidos</label>    
-                                    <input class="form-control" type="text" id="apellidos" name="apellidos" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="direccion">Direccion</label>
-                                    <textarea name="direccion" id="direccion" class="form-control" cols="30" rows="2" required></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="parroquia">Parroquia</label>
-                                    <select id="parroquia" name="parroquia" class="form-control" required>
-                                        <option value="">Seleccione</option>
-                                        <option value="1">CM. Yaritagua</option>
-                                        <option value="2">San Andres</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="telefono">Telefono</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="hidden" name="cedula" id="cedula2" value=""><!-- campo oculto cedula -->
-                                <!-- <input type="hidden" name="ids" id="ids" value=""> --><!-- campo oculto id (en caso de existir) -->
-                                <!-- <input type="hidden" id="condicion" name="condicion" value="<?= $condicion ?> -->
-                                <!-- <button type="submit" class="btn btn-success btn-block" id="boton">Guardar</button>
-                            </div>
-                        </div>
-                    </form> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script>
-    $('.datepicker').datepicker({
-        startDate: '-3d'
+    $(document).ready(function() {
+        $("#centro").hide();
+        $("#tipo_enfermedad").hide();
+        $("#tipo_antecedente").hide();
+        $("#tcontrol1").click(function(){
+            $("#centro").show();
+        });
+        $("#tcontrol2").click(function(){
+            $("#centro").hide();
+        });
+        $("#enfermedad1").click(function(){
+            $("#tipo_enfermedad").show();
+        });
+        $("#enfermedad2").click(function(){
+            $("#tipo_enfermedad").hide();
+        });
+        $("#antecedentes1").click(function(){
+            $("#tipo_antecedente").show();
+        });
+        $("#antecedentes2").click(function(){
+            $("#tipo_antecedente").hide();
+        });
     });
 </script>
 <script src="js/consulta.js"></script>

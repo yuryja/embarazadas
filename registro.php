@@ -7,7 +7,7 @@
     $telefono = $_POST['telefono'];
     $condicion = $_POST['condicion'];
     $ids = $_POST['ids'];
-    include('conexion.php');//Conexion a la Base de Datos
+    include 'conexion.php';//Conexion a la Base de Datos
     if($ids == NULL){//Si no trajo un id, quiere decir que no lo encontro en la BD
         $query = "INSERT INTO embarazadas (cedula, nombres, apellidos, direccion, parroquia, telefono, condicion) VALUES ('$cedula', '$nombres', '$apellidos', '$direccion', '$parroquia', '$telefono', '$condicion')";
     }else{//Encontro registro en la BD y lo va a modificar

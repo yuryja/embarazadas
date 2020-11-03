@@ -19,3 +19,7 @@ p#status {
 .form-inline {
     display: ruby;
 }
+label.dias {
+    margin-left: 20px;
+}
+
