@@ -13,7 +13,6 @@
                     
                 </div>
                 <div class="card-body">
-                    
                     <?php include 'consulta_cedula.php' ?>
                     <form action="registro.php" method="post">
                         <div class="row">
