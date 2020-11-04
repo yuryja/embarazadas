@@ -34,7 +34,7 @@
                                     <div class="form-group">
                                         <label for="tiempo_embarazo">Tiempo de embarazo</label>
                                         <div class="form-inline">
-                                            <input type="number" step="0.1" name="tiempo_embarazo" class="form-control" placeholder="Ejemplo: 20.5"  required>
+                                            <input type="number" step="00.1" name="tiempo_embarazo" class="form-control" placeholder="Ejemplo: 20.5"  required>
                                             <label for="tiempo_embarazo" class="dias">Semanas</label>
                                         </div>
                                         
