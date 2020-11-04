@@ -25,6 +25,9 @@
                 <a class="nav-link" href="reportes.php">Reportes</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="usuarios.php">Usuarios</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="ayuda.php">Ayuda</a>
             </li>
             <li class="nav-item">
