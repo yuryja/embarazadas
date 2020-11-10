@@ -18,11 +18,15 @@
                     <a class="dropdown-item" href="embarazadas.php">Registro Embarazadas</a>
                     <a class="dropdown-item" href="doctores.php">Registro Doctores</a>
                     <a class="dropdown-item" href="prenatales.php">Registro Prenatal</a>
-                    <a class="dropdown-item" href="citas.php">Consulta Prenatal</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="reportes.php">Reportes</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Reportes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="reporte.php">Reporte de Embarazadas</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">Usuarios</a>

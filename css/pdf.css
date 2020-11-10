@@ -1,0 +1,21 @@
+/* ARCHIVO PDF */
+.text-center, .titulo_pdf{
+    text-align: center;
+}
+.titulo_pdf{
+    font-size: 2em;
+    margin-top: 2em;
+}
+.titulo_pdf, .tabla{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.tabla{
+    width: 100%;
+    padding: 0px 20px;
+}
+td,th{
+    border: 1px solid #666;
+    width: 50%;
+    text-align: left;
+    padding: 5px 0px 5px 15px;
+}

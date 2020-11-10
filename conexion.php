@@ -4,6 +4,7 @@ if (mysqli_connect_errno()) {
     printf("Falló la conexión failed: %s\n", $link->connect_error);
     exit();
 }
+$link->set_charset('utf8');
 //localhost es el servidor
 //root es el usuario de la base de datos
 //'' es la clave del ususario de la base de datos

@@ -22,4 +22,19 @@ p#status {
 label.dias {
     margin-left: 20px;
 }
+img.ver{
+    color: #9daa00;
+}
+a.link-ver{
+    text-decoration: none;
+    color: #666;
+}
+form{
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+form button{
+    margin: 5px;
+}
 
