@@ -2,6 +2,6 @@
     include 'header.html';
     include 'sesion.php';
     include 'menu.php';
-    include 'charts.php';
+    include 'texto.php';
     include 'footer.html';
 ?>

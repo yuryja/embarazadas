@@ -28,9 +28,12 @@
                     <a class="dropdown-item" href="reporte.php">Reporte de Embarazadas</a>
                 </div>
             </li>
+            <?php if($_SESSION['user'] != 'Regis'){
+            echo '
             <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">Usuarios</a>
-            </li>
+            </li>';
+            } ?>
             <li class="nav-item">
                 <a class="nav-link" href="ayuda.php">Ayuda</a>
             </li>

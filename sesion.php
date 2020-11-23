@@ -1,5 +1,6 @@
 <?php
-$inactividad = 600;
+session_start();
+$inactividad = 600; //tiempo que dura la sesion activa en el sistema
 // Comprobar si $_SESSION["timeout"] está establecida
 if(isset($_SESSION["timeout"])){
     // Calcular el tiempo de vida de la sesión (TTL = Time To Live)
