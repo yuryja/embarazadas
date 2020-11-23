@@ -8,6 +8,7 @@ if ($resultado == true && $resultado->num_rows == 1) { //valida que la consulta 
     $row = $resultado->fetch_object(); //se trae la consulta SQL
     session_start(); //inicia la sesion
     $_SESSION["user"] = $row->acl; //crea la variable de sesion user
+    $_SESSION["nombre"] = $row->nombres; //crea la variable de sesion user
     $_SESSION["timeout"] = time(); //crea el tiempo necesario para que expire la sesion
     $resultado->close(); //libera de memoria la consulta SQL
     header('Location: inicio.php');

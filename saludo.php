@@ -1,0 +1,1 @@
+<?= 'Hola, '.$_SESSION['nombre'] ?>

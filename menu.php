@@ -43,3 +43,8 @@
         </ul>
     </div>
 </nav>
+<div class="container">
+    <div class="row d-flex justify-content-end saludo">
+        <?php include 'saludo.php' ?>
+    </div>
+</div>
