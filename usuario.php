@@ -60,17 +60,6 @@
                                     }   
                                 ?>
                             </tbody>
-                            <!-- <tfooter>
-                                <tr>
-                                    <th>#</th>
-                                    <th>usuario</th>
-                                    <th>Nombre y Apellido</th>
-                                    <th>Perfil</th>
-                                    <th>Creado</th>
-                                    <th>Modificado</th>
-                                    <th>Accion</th>
-                                </tr>
-                            </tfooter> -->
                         </table>  
                         </div>
                     </div>

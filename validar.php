@@ -2,7 +2,7 @@
 require_once 'conexion.php';
 $user = $_POST['user'];
 $contrasena = hash('md5', $_POST['contrasena'], false);
-$query = "Select * FROM users WHERE user='$user' AND contrasena='$contrasena'"; //consulta SQL
+$query = "Select * FROM users WHERE user='$user' AND contrasena='$contrasena' AND estado=1"; //consulta SQL
 $resultado = $link->query($query); //realiza la consulta
 if ($resultado == true && $resultado->num_rows == 1) { //valida que la consulta sea cierta (true)
     $row = $resultado->fetch_object(); //se trae la consulta SQL

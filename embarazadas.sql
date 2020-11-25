@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-11-2020 a las 06:20:46
+-- Tiempo de generación: 25-11-2020 a las 16:02:47
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.2.32
 
@@ -70,16 +70,18 @@ CREATE TABLE `prenatal` (
   `parto_humanizado` tinyint(1) NOT NULL DEFAULT 1,
   `antecedentes` tinyint(1) NOT NULL DEFAULT 1,
   `tipo_antecedente` text DEFAULT NULL,
-  `id_embarazada` int(11) NOT NULL
+  `id_embarazada` int(11) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `prenatal`
 --
 
-INSERT INTO `prenatal` (`id`, `ultima_regla`, `tiempo_embarazo`, `fecha_parto`, `tcontrol`, `centro`, `condicion_centro`, `enfermedad`, `tipo_enfermedad`, `micronutrientes`, `asic`, `parto_humanizado`, `antecedentes`, `tipo_antecedente`, `id_embarazada`) VALUES
-(1, '2020-11-03', 20, '2020-11-03', 2, '', 0, 2, '', 2, 2, 2, 2, '', 1),
-(2, '2020-10-26', 10, '2021-07-20', 1, 'Matarozzo', 1, 1, 'Gonorrea', 1, 1, 1, 1, 'Presenta gonorrea crónica', 4);
+INSERT INTO `prenatal` (`id`, `ultima_regla`, `tiempo_embarazo`, `fecha_parto`, `tcontrol`, `centro`, `condicion_centro`, `enfermedad`, `tipo_enfermedad`, `micronutrientes`, `asic`, `parto_humanizado`, `antecedentes`, `tipo_antecedente`, `id_embarazada`, `created`, `modified`) VALUES
+(1, '2020-11-03', 20, '2020-11-03', 2, '', 0, 2, '', 2, 2, 2, 2, '', 1, '2020-11-03 16:24:36', '2020-11-03 16:24:36'),
+(2, '2020-10-26', 10, '2021-07-20', 1, 'Matarozzo', 1, 1, 'Gonorrea', 1, 1, 1, 1, 'Presenta gonorrea crónica', 4, '2020-11-03 16:24:36', '2020-11-03 16:24:36');
 
 -- --------------------------------------------------------
 
@@ -90,8 +92,10 @@ INSERT INTO `prenatal` (`id`, `ultima_regla`, `tiempo_embarazo`, `fecha_parto`, 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `contrasena` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombres` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `acl` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `estado` tinyint(1) NOT NULL DEFAULT 1,
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -100,8 +104,11 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `password`, `acl`, `creation_date`, `update_date`) VALUES
-(1, 'yuryja', '123456', 'super', '2020-10-20 17:33:55', '2020-10-20 18:12:53');
+INSERT INTO `users` (`id`, `user`, `contrasena`, `nombres`, `acl`, `estado`, `creation_date`, `update_date`) VALUES
+(1, 'super', 'e10adc3949ba59abbe56e057f20f883e', 'SuperAdmin', 'super', 1, '2020-11-23 05:44:29', '2020-11-23 06:01:34'),
+(2, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Administrador', 'Admin', 1, '2020-11-23 05:45:54', '2020-11-23 06:00:55'),
+(3, 'registrador', 'e10adc3949ba59abbe56e057f20f883e', 'Registrador', 'Regis', 1, '2020-11-23 05:53:12', '2020-11-23 06:01:43'),
+(4, 'usuario2', '14e1b600b1fd579f47433b88e8d85291', 'Rafael', 'Regis', 2, '2020-11-25 14:22:40', '2020-11-25 14:56:08');
 
 --
 -- Índices para tablas volcadas
@@ -146,7 +153,7 @@ ALTER TABLE `prenatal`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
