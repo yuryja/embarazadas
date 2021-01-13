@@ -16,47 +16,47 @@
                     <?php include 'consulta_cedula.php' ?>
                     <form action="registro.php" method="post">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="col s12 m6">
+                                <div class="input-field">
                                     <label for="nombres">Nombres</label>    
-                                    <input class="form-control" type="text" id="nombres" name="nombres" required>
+                                    <input class="validate" type="text" id="nombres" name="nombres" required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="col s12 m6">
+                                <div class="input-field">
                                     <label for="nombres">Apellidos</label>    
-                                    <input class="form-control" type="text" id="apellidos" name="apellidos" required>
+                                    <input class="validate" type="text" id="apellidos" name="apellidos" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
+                            <div class="col s12 m12">
+                                <div class="input-field">
                                     <label for="direccion">Direccion</label>
-                                    <textarea name="direccion" id="direccion" class="form-control" cols="30" rows="2" required></textarea>
+                                    <textarea name="direccion" id="direccion" class="materialize-textarea validate" cols="30" rows="2" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="col s12 m6">
+                                <div class="input-field">
                                     <label for="parroquia">Parroquia</label>
-                                    <select id="parroquia" name="parroquia" class="form-control" required>
+                                    <select id="parroquia" name="parroquia" class="validate" required>
                                         <option value="">Seleccione</option>
                                         <option value="1">CM. Yaritagua</option>
                                         <option value="2">San Andres</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="col s12 m6">
+                                <div class="input-field">
                                     <label for="telefono">Telefono</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control">
+                                    <input type="tel" id="telefono" name="telefono" class="validate">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col s12 m12">
                                 <input type="hidden" name="cedula" id="cedula2" value=""><!-- campo oculto cedula -->
                                 <input type="hidden" name="ids" id="ids" value=""><!-- campo oculto id (en caso de existir) -->
                                 <input type="hidden" id="condicion" name="condicion" value="<?= $condicion ?>">
