@@ -30,7 +30,7 @@ a.link-ver{
     color: #666;
 }
 form{
-    display: table;
+    /* display: table; */
     margin: 0 auto;
     margin-bottom: 20px;
 }

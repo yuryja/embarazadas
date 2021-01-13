@@ -5,6 +5,7 @@
     // Aqui va el body
     $condicion = "1"; 
     include 'formulario.php';
+    include 'prenatal.php';
     // Aqui termina el body
     include 'footer.html'; //LLamado al footer
 ?>
