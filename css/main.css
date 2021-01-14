@@ -1,9 +1,12 @@
+body{
+    background: rgb(224, 224, 224);
+}
 .logo {
     width: 250px;
 }
 p#status {
     font-size: 1.5em;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 @media only screen and (min-width: 1024px) {
     div#navbarNavDropdown {

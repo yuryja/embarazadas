@@ -1,19 +1,22 @@
 <div class="container">
     <div class="row">
+        <h3 class="center-align">
+            <?= ($condicion == 1) ? "Registro de Embarazadas" : "Registro de Doctores" ?>
+        </h3>
+    </div>
+</div>
+<?php include 'consulta_cedula.php' ?>               
+<div class="container">
+    <div class="row">
+        <h4 class="center-align">
+            Datos Generales
+        </h4>
+    </div>
+    <div class="row">
         <div class="col-12">
-            <div class="card mycard">
-                <div class="card-header">
-                    <?php 
-                        if($condicion == 1){
-                            echo "Registro de Embarazadas";
-                        }else{
-                            echo "Registro de Doctores";
-                        }
-                    ?>
-                    
-                </div>
+            <div class="card">
                 <div class="card-body">
-                    <?php include 'consulta_cedula.php' ?>
+                    
                     <form action="registro.php" method="post">
                         <div class="row">
                             <div class="col s12 m6">
@@ -60,10 +63,10 @@
                                 <input type="hidden" name="cedula" id="cedula2" value=""><!-- campo oculto cedula -->
                                 <input type="hidden" name="ids" id="ids" value=""><!-- campo oculto id (en caso de existir) -->
                                 <input type="hidden" id="condicion" name="condicion" value="<?= $condicion ?>">
-                                <button type="submit" class="btn btn-success btn-block" id="boton">Guardar</button>
+                                <!-- <button type="submit" class="btn btn-success btn-block" id="boton">Guardar</button> -->
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
